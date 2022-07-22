@@ -1,32 +1,58 @@
 import React, { useState } from "react";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faBars} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { useTransition, animated } from 'react-spring';
 
-function Navigation (){
+function Navigation() {
     const [showMenu, setShowMenu] = useState(false);
-    let menu;
-    let menuMask;
-    if(showMenu){
-        menu = 
-        <div className="fixed bg-white top-0 left-0 h-full w-4/5 z-50">
-            menu
-        </div>
-        menuMask = 
-        <div className="fixed bg-black  top-0 left-0 h-full w-full z-50"
-                onClick={()=>setShowMenu(false)}>
-            menu
-        </div>
-    }
+
+    const masktransitions = useTransition(showMenu, {
+        from: { position: 'absolute', opacity: 0 },
+        enter: { opacity: 1 },
+        leave: { opacity: 0 },
+    })
+
+    const menutransitions = useTransition(showMenu, {
+        from: { opacity: 0, transform: 'translateX(-100%)' },
+        enter: { opacity: 1, transform: 'translateX(0%)' },
+        leave: { opacity: 0, transform: 'translateX(-100%)' },
+    })
+
     return (
         <span>
             <nav className="text-xl">
-                <FontAwesomeIcon 
-                    icon={faBars} 
-                    onClick={()=>setShowMenu(!showMenu)}/>
+                <FontAwesomeIcon
+                    icon={faBars}
+                    onClick={() => setShowMenu(!showMenu)} />
             </nav>
-            {menuMask}
-            {menu}
+            {
+                masktransitions(
+                    (styles, item) => item &&
+                        <animated.div
+                            style={styles}
+                            className="fixed bg-black-t-50  top-0 left-0 h-full w-full z-50"
+                            onClick={() => setShowMenu(false)}
+                        >
+                        </animated.div>
+                )
+            }
 
+            {
+                menutransitions(
+                    (styles, item) => item &&
+                        <animated.div
+                            style={styles}
+                            className="fixed bg-white top-0 left-0 h-full w-4/5 z-50"
+                            onClick={() => setShowMenu(false)}
+                        >
+                            <span className="font-bold p-3">The Menu</span>
+                            <ul>
+                                <li>Home</li>
+                                <li>About</li>
+                            </ul>
+                        </animated.div>
+                )
+            }
         </span>
     )
 }
