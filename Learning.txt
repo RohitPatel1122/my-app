@@ -2,10 +2,11 @@
 2. When a module return, it should return atleast a wrapper <div></div>, else error.
 3. If more than one also, will error
 
-Components:
-1. Functional type (state less)
-2. Class type: extends React.Components 
+Topic to learn:
+1. Functional component type (state less)
+2. Class component type: extends React.Components 
 3. Props: way to pass parameter inside a Components
+4. Hooks
 
 
 QA:
@@ -17,4 +18,6 @@ Hands One:
 1. Create a new Components: HelloWorld
 
 2. Use props to pass value of name
+
+3. Use Hooks to store a state of system
 
