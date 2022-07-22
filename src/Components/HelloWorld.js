@@ -1,8 +1,8 @@
 import React from "react";
 
-function HelloWorld(){
+function HelloWorld(props){
     return(
-        <h1>Hello Rohit</h1>
+        <h1>Hello {props.name}</h1>
     );
 }
 
