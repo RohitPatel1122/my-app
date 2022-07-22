@@ -4,7 +4,7 @@
 
 Components:
 1. Functional type (state less)
-2. ES6 type
+2. Class type: extends React.Components 
 3. Props: way to pass parameter inside a Components
 
 
