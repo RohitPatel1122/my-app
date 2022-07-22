@@ -1,12 +1,13 @@
 
-import './App.css';
 import HelloWorld from './Components/HelloWorld';
+import Header from './Components/Header';
 import Counter from './Components/CounterExample';
 function App() {
   return (
     <div>
-        {/* <HelloWorld name = "Rohit patel"></HelloWorld> */}
-        <Counter/>
+      <Header/>
+      <HelloWorld name = "Rohit patel"></HelloWorld>
+        
     </div>
   );
 }
