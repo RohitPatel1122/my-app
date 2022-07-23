@@ -14,10 +14,10 @@ function App() {
     <div>
       <Router>
         <Header/>
-        {/* <HelloWorld name = "Rohit patel"></HelloWorld> */}
         <Routes>
-          <Route exact path='/' element={<Counter/>}/>
-          <Route path='/about'>About</Route>
+          <Route exact path='/' element= {App}/>
+          <Route path='/about' element={<h1>Text</h1>}></Route>
+          <Route path='*' element={<h1>Nothing fond</h1>}></Route>
         </Routes>
         <Footer/>
         
