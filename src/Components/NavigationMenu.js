@@ -6,11 +6,13 @@ import {
 function NavigationMenu(props) {
     return(
         <div>
-            <span className="font-bold p-3">The Menu</span>
+            <div className="text-center font-bold py-3">
+                The Menu
+            </div>
             <ul>
                 <li>
                     <Link 
-                        className='text-blue-500' 
+                        className='p-3 text-center text-blue-500 py-3 border-t border-b block' 
                         onClick={props.closeMenu}
                         to='/'>
                         Home
@@ -18,7 +20,7 @@ function NavigationMenu(props) {
                 </li>
                 <li>
                     <Link 
-                        className='text-blue-500' 
+                        className='p-3 text-center text-blue-500 py-3  border-b block' 
                         onClick={props.closeMenu}
                         to='/about'>
                              About
