@@ -483,6 +483,9 @@ video {
 .w-4\/5 {
   width: 80%;
 }
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
 .items-center {
   align-items: center;
 }
@@ -495,6 +498,9 @@ video {
 .bg-gray-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+}
+.bg-black-t-50 {
+  background-color: rgba(0,0,0,0.5);
 }
 .bg-white {
   --tw-bg-opacity: 1;
